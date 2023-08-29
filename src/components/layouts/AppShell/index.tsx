@@ -8,7 +8,7 @@ const AppShell = (props: AppShellProps) => {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       {children}
       {/* <Footer /> */}
     </>

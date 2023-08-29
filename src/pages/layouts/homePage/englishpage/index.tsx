@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import netflixIcon from "./../../../../assets/images/homePage/Netflix_icon.svg";
 import imageTV from "./../../../../assets/images/homePage/tv.png";
@@ -23,9 +22,9 @@ const HomePageEnglish = () => {
               <Image src={netflixIcon} alt="" className="w-40 h-40" />
 
               <div className="flex space-x-2 mr-2 items-center">
-                <select className="select select-bordered w-full max-w-xs">
-                  <option>Bahasa Indonesia</option>
-                  <option selected>English</option>
+                <select className="select select-bordered w-full max-w-xs" value="">
+                  <option value="BahasaIndonesia">Bahasa Indonesia</option>
+                  <option value="English">English</option>
                 </select>
                 <button className="btn bg-red-600 hover:bg-red-700 text-white" onClick={handlerSignIn}>
                   Sign In

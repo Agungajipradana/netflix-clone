@@ -52,11 +52,11 @@ const PopularMovie = () => {
   const MovieHoverCard = ({ movie, index }: { movie: MovieProps; index: number }) => {
     return (
       <div
-        className={`absolute hidden group-hover:flex flex-col items-center justify-center text-white max-w-full max-h-full transition-transform transform-gpu hover:scale-110 top-0 left-0 right-0 bottom-0 ${
+        className={`absolute z-[9999] hidden group-hover:flex flex-col items-center justify-center text-white max-w-full max-h-full transition-transform transform-gpu hover:scale-110 top-0 left-0 right-0 bottom-0 ${
           index !== hoverIndex && "hidden"
         }`}
       >
-        <div className="card card-compact">
+        <div className="card card-compact  ">
           <figure className="relative">
             <Image className="w-full h-full " src={`${process.env.NEXT_PUBLIC_BASEIMAGEURL}/${movie.backdrop_path}`} alt="" width={300} height={300} quality={90} priority />
             <h3 className="font-bold text-md absolute bottom-2 left-2">{movie.title}</h3>
@@ -101,10 +101,10 @@ const PopularMovie = () => {
   };
 
   return (
-    <div className="bg-[#141414] text-white min-h-screen">
-      <h4 className="font-semibold pt-20 ml-4">Popular on Netflix</h4>
-      <div className="flex justify-center items-center text-center ">
-        <div className="w-full mt-2">
+    <div className="bg-[#141414] text-white min-h-screen ">
+      <h1 className="text-3xl font-semibold ml-4 mb-5 pt-5 ">Popular on Netflix</h1>
+      <div className="flex justify-center items-center text-center">
+        <div className="w-full mt-2 ">
           <Slider {...settings} className="mx-20" appendDots={(dots) => <ul className="slick-dots my-4">{dots}</ul>}>
             {popularMovies.map((movie, i) => (
               <div className={`carousel-item group relative ${hoverIndex === i ? "hovered" : ""}`} key={i}>

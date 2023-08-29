@@ -30,11 +30,11 @@ export const getGenreMovieList = async () => {
 export const getMovieListAllPage = async () => {
   try {
     const movieAllPage = await axios.get(`${baseUrl}/movie/popular?api_key=${apiKey}`);
-    console.log(movieAllPage);
+    // console.log(movieAllPage);
     return movieAllPage.data.results;
   } catch (error) {
     throw error;
   }
 };
 
-console.log(getMovieListAllPage());
+// console.log(getMovieListAllPage());
