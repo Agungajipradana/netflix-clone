@@ -24,6 +24,9 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "daisyui": "^3.5.1"
+    "@types/react-slick": "^0.23.10",
+    "daisyui": "^3.5.1",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
   }
 }

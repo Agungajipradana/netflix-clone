@@ -7,12 +7,16 @@ import playIcon from "../../../assets/images/home/play.svg";
 import plusIcon from "../../../assets/images/home/plus.svg";
 import likeIcon from "../../../assets/images/home/like.svg";
 import arrowDownIcon from "../../../assets/images/home/arrow-down.svg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const PopularMovie = () => {
   const [popularMovies, setPopularMovies] = useState<MovieProps[]>([]);
   const [genreMovies, setGenreMovies] = useState<GenreMovieProps[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [selectedMovie, setSelectedMovie] = useState<MovieProps | null>(null);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   useEffect(() => {
     getMovieList().then((result) => {
@@ -36,16 +40,29 @@ const PopularMovie = () => {
     return genre ? genre.name : "Unknown Genre";
   };
 
-  const MovieHoverCard = ({ movie }: { movie: MovieProps }) => {
+  const settings = {
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    centerMode: false,
+    centerPadding: "60px",
+  };
+
+  // console.log(settings);
+
+  const MovieHoverCard = ({ movie, index }: { movie: MovieProps; index: number }) => {
     return (
-      <div className="absolute hidden group-hover:flex flex-col items-center justify-center text-white max-w-full max-h-full transition-transform transform-gpu hover:scale-110">
-        <div className="card card-compact ">
+      <div
+        className={`absolute hidden group-hover:flex flex-col items-center justify-center text-white max-w-full max-h-full transition-transform transform-gpu hover:scale-110 top-0 left-0 right-0 bottom-0 ${
+          index !== hoverIndex && "hidden"
+        }`}
+      >
+        <div className="card card-compact">
           <figure className="relative">
-            <Image className="w-full h-full" src={`${process.env.NEXT_PUBLIC_BASEIMAGEURL}/${movie.backdrop_path}`} alt="" width={300} height={300} quality={90} />
+            <Image className="w-full h-full " src={`${process.env.NEXT_PUBLIC_BASEIMAGEURL}/${movie.backdrop_path}`} alt="" width={300} height={300} quality={90} priority />
             <h3 className="font-bold text-md absolute bottom-2 left-2">{movie.title}</h3>
           </figure>
 
-          <div className="card-body bg-[#141414] w-full h-full">
+          <div className="card-body bg-[#141414] w-full h-full ">
             <div className=" p-4">
               <div className="flex justify-between">
                 <div className="flex justify-center items-center gap-2">
@@ -84,28 +101,20 @@ const PopularMovie = () => {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-[#141414] text-white min-h-screen">
       <h4 className="font-semibold pt-20 ml-4">Popular on Netflix</h4>
-      <div className="flex justify-center items-center text-center">
-        <div className="carousel carousel-center max-w-full space-x-4 ml-4 mt-2">
-          {popularMovies.map((movie, i) => (
-            <div className="carousel-item group relative" key={i} id={`slide${i + 1}`}>
-              <Image className="w-full h-full" src={`${process.env.NEXT_PUBLIC_BASEIMAGEURL}/${movie.backdrop_path}`} alt="" width={300} height={300} quality={90} />
-              <MovieHoverCard movie={movie} />
-              <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                {i > 0 && (
-                  <a href={`#slide${i}`} className="btn btn-circle">
-                    ❮
-                  </a>
-                )}
-                {i < popularMovies.length - 1 && (
-                  <a href={`#slide${i + 2}`} className="btn btn-circle">
-                    ❯
-                  </a>
-                )}
+      <div className="flex justify-center items-center text-center ">
+        <div className="w-full mt-2">
+          <Slider {...settings} className="mx-20" appendDots={(dots) => <ul className="slick-dots my-4">{dots}</ul>}>
+            {popularMovies.map((movie, i) => (
+              <div className={`carousel-item group relative ${hoverIndex === i ? "hovered" : ""}`} key={i}>
+                <div className={`relative w-full h-full ${hoverIndex === i ? "hovered" : ""}`} onMouseEnter={() => setHoverIndex(i)} onMouseLeave={() => setHoverIndex(null)}>
+                  <Image className="w-full h-full" src={`${process.env.NEXT_PUBLIC_BASEIMAGEURL}/${movie.backdrop_path}`} alt="" width={300} height={300} quality={90} priority />
+                  <MovieHoverCard movie={movie} index={i} />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </Slider>
         </div>
       </div>
     </div>

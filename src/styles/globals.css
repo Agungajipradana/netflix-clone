@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Tambahkan margin pada elemen dots */
+.slick-dots li button {
+  margin: 0 5px;
+}
+
+.carousel-item .hovered .w-full {
+  transform: scale(1.1) translateZ(50px);
+  /* Anda bisa menyesuaikan angka-angka di atas sesuai dengan tampilan yang Anda inginkan */
+}
+
+.carousel-item .card-compact.hovered {
+  transform: translateZ(50px);
+  /* Anda bisa menyesuaikan angka-angka di atas sesuai dengan tampilan yang Anda inginkan */
+}
+
+.carousel-item .card-compact .border.rounded-full,
+.carousel-item .card-compact .text-green-500,
+.carousel-item .card-compact .font-bold {
+  transition: transform 0.3s ease-in-out;
+}
+
 /*
 :root {
   --foreground-rgb: 0, 0, 0;
