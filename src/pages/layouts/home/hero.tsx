@@ -12,6 +12,7 @@ const HeroPage = () => {
   const [genreMovies, setGenreMovies] = useState<GenreMovieProps[]>([]);
   const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState<number>(0);
   const [showModalInfo, setShowModalInfo] = useState<boolean>(false);
+  const [moreLikeThisMovies, setMoreLikeThisMovies] = useState<MovieProps[]>([]);
 
   useEffect(() => {
     getMovieList().then((result) => {
@@ -27,7 +28,9 @@ const HeroPage = () => {
   }, []);
 
   const handlerShowModalInfo = () => {
-    setShowModalInfo(!showModalInfo);
+    setShowModalInfo(true);
+    const randomMovies = getRandomMovies();
+    setMoreLikeThisMovies(randomMovies);
   };
 
   const handlerCloseModalInfo = () => {
@@ -40,12 +43,23 @@ const HeroPage = () => {
     backgroundImage: `url(${process.env.NEXT_PUBLIC_BASEIMAGEURL_ORIGINAL}/${currentMovie?.backdrop_path})`,
   };
 
-  const shuffledMovies = popularMovies.sort(() => Math.random() - 0.5);
+  const getRandomMovies = () => {
+    const currentMovieId = currentMovie?.id;
+    const remainingMovies = popularMovies.filter((movie) => movie.id !== currentMovieId);
+    const randomMovies = [];
+
+    while (randomMovies.length < 6 && remainingMovies.length > 0) {
+      const randomIndex = Math.floor(Math.random() * remainingMovies.length);
+      randomMovies.push(remainingMovies.splice(randomIndex, 1)[0]);
+    }
+
+    return randomMovies;
+  };
 
   return (
     <div className="bg-cover bg-center bg-no-repeat min-h-screen" style={backgroundStyles}>
       <div className="flex items-center justify-center">
-        <div className="max-w-lg mx-auto p-4 text-slate-100 absolute bottom-[100px] left-2">
+        <div className="max-w-lg mx-auto p-4 text-slate-200 absolute bottom-[100px] left-2 font-bebas-neue">
           <h1 className="text-4xl font-semibold mb-4 ">{currentMovie?.title}</h1>
           <p className="text-lg">{currentMovie?.overview.substring(0, 150)}...</p>
           <div className="mt-5">
@@ -53,7 +67,14 @@ const HeroPage = () => {
               <Image src={playIcon} alt="" className="w-5 h-5" />
               <p>Play</p>
             </button>
-            <button onClick={handlerShowModalInfo} className="btn text-slate-100 bg-[#141414] opacity-75 hover:bg-[#141414] hover:opacity-40 hover:text-white ml-2  font-bold text-lg">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                handlerShowModalInfo();
+              }}
+              className="btn text-slate-200 bg-[#141414] opacity-75 hover:bg-[#141414] hover:opacity-40 hover:text-white ml-2  font-bold text-lg"
+            >
               <Image src={informationIcon} alt="" className="w-5 h-5" />
               <p>More Info</p>
             </button>
@@ -64,7 +85,14 @@ const HeroPage = () => {
                     <Image src={`${process.env.NEXT_PUBLIC_BASEIMAGEURL_ORIGINAL}/${currentMovie?.backdrop_path}`} width={900} height={300} quality={100} priority alt="" className=" w-[1000px]" />
 
                     <div className="absolute -top-1 right-2 mt-3">
-                      <button className="btn btn-circle btn-outline" onClick={handlerCloseModalInfo}>
+                      <button
+                        type="button"
+                        className="btn btn-circle btn-outline"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handlerCloseModalInfo();
+                        }}
+                      >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
@@ -107,7 +135,7 @@ const HeroPage = () => {
                           );
                         })}
                       </div>
-                      <div className="text-xl font-semibold text-slate-100">
+                      <div className="text-xl font-semibold text-slate-200">
                         <h1>More Like This</h1>
                       </div>
                     </div>
@@ -115,11 +143,11 @@ const HeroPage = () => {
 
                   <div className="card-body items-center text-center absolute mt-[550px] ">
                     <div className="grid grid-cols-3 gap-8 mx-14 ">
-                      {shuffledMovies.slice(0, 6).map((movie, i) => (
+                      {moreLikeThisMovies.map((movie, i) => (
                         <div className="card card-compact w-[240px] bg-[#141414] shadow-xl" key={i}>
                           <figure>
                             <Image src={`${process.env.NEXT_PUBLIC_BASEIMAGEURL_ORIGINAL}/${movie.backdrop_path}`} width={900} height={300} quality={100} priority alt="" className=" w-[240px] h-[130px]" />
-                            <h2 className="absolute bottom-[170px] left-2 font-bold">{movie.title}</h2>
+                            <h2 className="absolute bottom-[170px] left-2 font-bold">{movie.title.length > 26 ? `${movie.title.substring(0, 26)}...` : movie.title}</h2>
                           </figure>
                           <div className="card-body">
                             <div className="grid grid-cols-2">

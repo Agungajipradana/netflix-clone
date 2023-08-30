@@ -11,7 +11,7 @@ import lockProfile from "../../../assets/images/userNamePage/lockProfile.png";
 const UserNamePage = () => {
   return (
     <>
-      <div className="bg-black min-h-screen bg-cover bg-center ">
+      <div className="bg-black min-h-screen bg-cover bg-center font-bebas-neue">
         <div className="hidden lg:flex max-w-full max-h-full justify-between text-slate-500 font-medium items-center pb-10 mx-28 mt-0">
           <Image src={netflixIcon} alt="" className="w-40 h-40" />
         </div>

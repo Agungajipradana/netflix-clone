@@ -4,7 +4,10 @@ import imageTV from "./../../../../assets/images/homePage/tv.png";
 import imageMobile from "./../../../../assets/images/homePage/mobile.jpg";
 import imageDesktop from "./../../../../assets/images/homePage/desktop.png";
 import imageKids from "./../../../../assets/images/homePage/kids.png";
+import globalIcon from "./../../../../assets/images/homePage/global-icon.svg";
+import arrowRightIcon from "./../../../../assets/images/homePage/arrow-right.svg";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const HomePageEnglish = () => {
   const { push } = useRouter();
@@ -15,38 +18,43 @@ const HomePageEnglish = () => {
 
   return (
     <>
-      <div className="bg-my-homepage min-h-screen bg-cover bg-center">
-        <div className="absolute z-10 inset-0 bg-black opacity-75  ">
-          <div className="relative z-20">
-            <div className="hidden lg:flex max-w-full max-h-full justify-between text-slate-500 font-medium items-center pb-10 mx-28 mt-0">
-              <Image src={netflixIcon} alt="" className="w-40 h-40" />
+      <div>
+        <div className="bg-my-homepage min-h-screen bg-cover bg-center ">
+          <div className="absolute z-10 inset-0 bg-[#00000066]  font-bebas-neue">
+            <div className="relative z-20">
+              <div className="hidden lg:flex max-w-full max-h-full justify-between text-slate-500 font-medium items-center pb-10 mx-40 mt-4">
+                <Image src={netflixIcon} alt="" className="w-[148px] h-[40px]" />
 
-              <div className="flex space-x-2 mr-2 items-center">
-                <select className="select select-bordered w-full max-w-xs" value="">
-                  <option value="BahasaIndonesia">Bahasa Indonesia</option>
-                  <option value="English">English</option>
-                </select>
-                <button className="btn bg-red-600 hover:bg-red-700 text-white" onClick={handlerSignIn}>
-                  Sign In
-                </button>
+                <div className="flex space-x-6 items-center">
+                  <select className="select select-bordered select-sm w-[180px] rounded h-[32px]  bg-[#00000066] text-slate-200 outline outline-offset-1 outline-slate-200 " defaultValue="English">
+                    <option>Bahasa Indonesia</option>
+                    <option>English</option>
+                  </select>
+                  <button className="btn btn-sm border-none rounded bg-[#E50914] hover:bg-red-700 text-white w-[90px] h-[25px]" onClick={handlerSignIn}>
+                    Sign In
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <div className="flex-col justify-center items-center text-center text-white mt-20">
-              <h1 className="text-5xl font-bold pb-5">Unlimited movies, TV shows, and more</h1>
-              <h2 className="text-3xl font-medium pb-5">Watch anywhere. Cancel anytime.</h2>
-              <p className="text-2xl pb-5">Ready to watch? Enter your email to create or restart your membership.</p>
+              <div className="flex-col justify-center items-center text-center text-white mt-[150px]">
+                <h1 className="text-5xl font-bold pb-5">Unlimited movies, TV shows, and more</h1>
+                <h2 className="text-3xl font-medium pb-5">Watch anywhere. Cancel anytime.</h2>
+                <p className="text-2xl pb-5">Ready to watch? Enter your email to create or restart your membership.</p>
 
-              <div className="">
-                <input type="email" placeholder="Email address" className="input input-bordered input-lg w-full max-w-xs mr-2 text-white bg-gray-600 bg-transparent focus:outline-none focus:ring focus:border-slate-200" />
-                <button className="btn btn-lg bg-red-600 hover:bg-red-700 text-white">Get Started </button>
+                <div className="">
+                  <input type="email" placeholder="Email address" className="input input-bordered input-lg w-[376px] h-[56px] mr-3 text-white rounded bg-[#00000066] outline outline-offset-1 outline-slate-300" />
+                  <button className="btn btn-lg border-none rounded bg-[#E50914] hover:bg-red-700 text-white w-[211px] h-[56px]">
+                    Get Started
+                    <Image src={arrowRightIcon} alt="" className="w-5 h-5 " />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-[#141414] pt-2">
+      <div className="bg-[#141414] pt-2 font-bebas-neue">
         <div className="bg-black pt-16 text-white">
           <div className="flex justify-center items-center text-center">
             <div className="text-left mx-24">
@@ -58,7 +66,7 @@ const HomePageEnglish = () => {
         </div>
       </div>
 
-      <div className="bg-[#141414] pt-2">
+      <div className="bg-[#141414] pt-2 font-bebas-neue">
         <div className="bg-black pt-16 text-white">
           <div className="flex justify-center items-center text-center">
             <Image src={imageMobile} alt="" className="" />
@@ -70,7 +78,7 @@ const HomePageEnglish = () => {
         </div>
       </div>
 
-      <div className="bg-[#141414] pt-2">
+      <div className="bg-[#141414] pt-2 font-bebas-neue">
         <div className="bg-black pt-16 text-white">
           <div className="flex justify-center items-center text-center">
             <div className="text-left mx-24">
@@ -82,7 +90,7 @@ const HomePageEnglish = () => {
         </div>
       </div>
 
-      <div className="bg-[#141414] pt-2">
+      <div className="bg-[#141414] pt-2 font-bebas-neue">
         <div className="bg-black pt-16 text-white">
           <div className="flex justify-center items-center text-center">
             <Image src={imageKids} alt="" className="" />
@@ -94,12 +102,12 @@ const HomePageEnglish = () => {
         </div>
       </div>
 
-      <div className="bg-[#141414] pt-2">
+      <div className="bg-[#141414] pt-2 font-bebas-neue">
         <div className="bg-black pt-16 text-white">
           <div className="flex-col justify-center items-center text-center mx-24">
             <h1 className="text-5xl font-bold pb-5">Frequently Asked Questions</h1>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left">
+            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left rounded">
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">What is Netflix?</div>
               <div className="collapse-content">
@@ -108,7 +116,7 @@ const HomePageEnglish = () => {
               </div>
             </div>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left">
+            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left font-bebas-neue rounded">
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">How much does Netflix cost?</div>
               <div className="collapse-content">
@@ -116,7 +124,7 @@ const HomePageEnglish = () => {
               </div>
             </div>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left">
+            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left rounded">
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">Where can I watch?</div>
               <div className="collapse-content">
@@ -128,7 +136,7 @@ const HomePageEnglish = () => {
               </div>
             </div>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left">
+            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left rounded">
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">How do I cancel?</div>
               <div className="collapse-content">
@@ -136,7 +144,7 @@ const HomePageEnglish = () => {
               </div>
             </div>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left">
+            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left rounded">
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">What can I watch on Netflix?</div>
               <div className="collapse-content">
@@ -144,7 +152,7 @@ const HomePageEnglish = () => {
               </div>
             </div>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left">
+            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left rounded">
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">Is Netflix good for kids?</div>
               <div className="collapse-content">
@@ -155,45 +163,56 @@ const HomePageEnglish = () => {
 
             <p className="text-2xl py-5">Ready to watch? Enter your email to create or restart your membership.</p>
 
-            <div className="pb-5">
-              <input type="email" placeholder="Email address" className="input input-bordered input-lg w-full max-w-xs mr-2 text-white bg-gray-600 bg-transparent focus:outline-none focus:ring focus:border-slate-200" />
-              <button className="btn btn-lg bg-red-600 hover:bg-red-700 text-white">Get Started </button>
+            <div className="pb-16">
+              <input type="email" placeholder="Email address" className="input input-bordered input-lg w-[376px] h-[56px] mr-3 text-white rounded bg-[#00000066] outline outline-offset-1 outline-slate-300" />
+              <button className="btn btn-lg border-none rounded bg-[#E50914] hover:bg-red-700 text-white w-[211px] h-[56px]">
+                Get Started
+                <Image src={arrowRightIcon} alt="" className="w-5 h-5 " />
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-[#141414] pt-2">
-        <div className="bg-black pt-16 text-white ">
-          <div className="text-left border border-white mx-24">
-            <p>Questions? Call 007-803-321-2130</p>
+      <div className="bg-[#141414] pt-2 font-bebas-neue ">
+        <div className="bg-black pt-16 text-white min-h-[75vh]">
+          <div className="text-left mx-28">
+            <div className="flex flex-row text-center space-x-2 mx-10">
+              <p>Questions?</p>
+              <Link href={{}} className="underline underline-offset-1">
+                Call 007-803-321-2130
+              </Link>
+            </div>
             <footer className="footer p-10 text-neutral-content">
               <div>
-                <span className="footer-title">Services</span>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <a className="link">FAQ</a>
+                <a className="link ">Media Center</a>
+                <a className="link ">Redeem Gift Cards</a>
+                <a className="link ">Terms of Use</a>
+                <a className="link ">Corporate Information</a>
+                <a className="link ">Legal Notices</a>
               </div>
               <div>
-                <span className="footer-title">Company</span>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
+                <a className="link ">Help Center</a>
+                <a className="link ">Investor Relations</a>
+                <a className="link ">Buy Gift Cards</a>
+                <a className="link ">Privacy</a>
+                <a className="link ">Contact Us</a>
+                <a className="link ">Only on Netflix</a>
               </div>
               <div>
-                <span className="footer-title">Legal</span>
-                <a className="link link-hover">Terms of use</a>
-                <a className="link link-hover">Privacy policy</a>
-                <a className="link link-hover">Cookie policy</a>
+                <a className="link ">Account</a>
+                <a className="link ">Jobs</a>
+                <a className="link ">Ways to Watch</a>
+                <a className="link ">Cookie Preferences</a>
+                <a className="link ">Speed Test</a>
               </div>
             </footer>
 
-            <div className="mb-8">
-              <select className="select select-bordered w-full max-w-xs bg-gray-900 text-white">
+            <div className="mb-20 mx-10">
+              <select className="select select-bordered select-sm w-[180px] rounded h-[32px] bg-[#141414] text-slate-200 outline outline-offset-1 outline-slate-200 " defaultValue="English">
                 <option>Bahasa Indonesia</option>
-                <option selected>English</option>
+                <option>English</option>
               </select>
 
               <p className="pt-5">Netflix Indonesia</p>

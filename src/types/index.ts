@@ -3,6 +3,7 @@ export interface AppShellProps {
 }
 
 export interface MovieProps {
+  id: number;
   title: string;
   backdrop_path: string;
   release_date: string;

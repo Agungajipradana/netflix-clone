@@ -5,9 +5,15 @@ import searchIcon from "../../../assets/images/navbar/search.svg";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-const navLink = [
+const profileLink = [
   { label: "Account", path: "/layouts/userName" },
   { label: "Logout", path: "/layouts/auth/login" },
+];
+
+const navLink = [
+  { label: "My List", path: "" },
+  { label: "Movies", path: "" },
+  { label: "Tv Shows", path: "" },
 ];
 
 const Navbar = () => {
@@ -49,14 +55,20 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`bg-[#141414] mb-20 ${scrolled ? "bg-opacity-70" : "bg-[#141414]"}`}>
+    <nav className={`bg-[#141414] mb-20 font-bebas-neue ${scrolled ? "bg-opacity-70" : "bg-[#141414]"}`}>
       <div className={`bg-[#141414] top-0 fixed w-full z-[9999] ${scrolled ? "bg-opacity-70" : "bg-[#141414]"}`}>
         <div className="hidden lg:flex max-w-full max-h-full justify-between text-slate-200 font-medium items-center mx-16 py-5">
           <div className="flex items-center text-center space-x-4">
-            <Image src={netflixIcon} alt="" className="w-[87px] h-[25px]" />
-            <p>My List</p>
-            <p>Movies</p>
-            <p>Tv Shows </p>
+            <Link href={"/layouts/home"}>
+              <Image src={netflixIcon} alt="" className="w-[87px] h-[25px]" />
+            </Link>
+            {navLink.map((item) => (
+              <ul key={item.path}>
+                <li>
+                  <Link href={item.path}>{item.label}</Link>
+                </li>
+              </ul>
+            ))}
           </div>
 
           <div className="flex space-x-2 mr-2 items-center">
@@ -74,7 +86,7 @@ const Navbar = () => {
             {showModal && (
               <div className="absolute mt-36" ref={modalRef}>
                 <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-[#141414] opacity-75 rounded-box w-28">
-                  {navLink.map((item) => (
+                  {profileLink.map((item) => (
                     <li key={item.path}>
                       <Link href={item.path} className="hover:bg-slate-200 hover:text-[#141414] transition duration-300 ease-out hover:ease-in">
                         {item.label}
