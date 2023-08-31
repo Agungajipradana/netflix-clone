@@ -12,21 +12,21 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="bg-my-homepage w-[1349px] h-[1150px] bg-cover bg-center ">
-        <div className="absolute z-10 inset-0 bg-[#00000066] w-[1349px] h-[1150px]  font-bebas-neue">
+      <div className="bg-black min-h-screen bg-cover bg-center md:bg-my-homepage md:w-[1349px] md:h-[1150px]">
+        <div className="absolute z-10 inset-0 font-bebas-neue md:bg-[#00000066] md:w-[1349px] md:h-[1150px] ">
           <div className="relative z-20">
-            <div className="hidden lg:flex max-w-full max-h-full justify-between text-slate-500 font-medium items-center pb-10 mx-10 mt-6">
-              <Image src={netflixIcon} alt="" className="w-[166px] h-[45px]" />
+            <div className="flex max-w-full max-h-full justify-between text-slate-500 font-medium items-center  mx-4 mt-6 md:pb-10 md:mx-10">
+              <Image src={netflixIcon} alt="" className="w-[74px] h-[20px] md:w-[166px] md:h-[45px]" />
             </div>
 
-            <div className="flex justify-center items-center mb-20">
-              <div className="relative z-0 flex bg-black opacity-80 text-white box-border border-white w-[450px] h-[660px]">
-                <div className="absolute z-10 flex-wrap justify-center items-center text-left text-white mt-16 mx-14">
-                  <div className=" w-[340px] h-[460px]">
-                    <h2 className="text-4xl font-semibold pb-5">Sign In</h2>
-                    <input type="email" placeholder="Email or phone number" className="input input-bordered input-lg w-[314px] h-[50px] mr-2 text-white bg-[#333333] mb-5" />
-                    <input type="password" placeholder="Password" className="input input-bordered input-lg w-[314px] h-[50px] mr-2 text-white bg-[#333333] mb-8" />
-                    <button className="btn  w-[314px] h-[50px] border-none rounded bg-[#E50914] hover:bg-red-700 text-white" onClick={handlerSignIn}>
+            <div className="flex flex-col md:justify-center md:items-center md:mb-20">
+              <div className="relative z-0 flex text-white box-border border-2 ml-6 border-red-500 w-[740px] h-[660px] md:w-[450px] md:h-[660px] md:bg-black md:opacity-80">
+                <div className="absolute z-10 flex flex-col justify-center items-center text-left text-white mt-5  md:justify-center md:items-center md:mx-14 md:mt-16">
+                  <div className="md:w-[340px] md:h-[460px]">
+                    <h2 className="text-3xl font-semibold pb-5 md:text-4xl">Sign In</h2>
+                    <input type="email" placeholder="Email or phone number" className="input input-bordered input-lg text-white mb-5 bg-[#333333] w-auto sm:w-full md:w-[314px] md:h-[50px]" />
+                    <input type="password" placeholder="Password" className="input input-bordered input-lg mr-2 text-white bg-[#333333] mb-8 w-[100%] md:w-[314px] md:h-[50px]" />
+                    <button className="btn w-[100%] md:w-[314px] md:h-[50px] border-none rounded bg-[#E50914] hover:bg-red-700 text-white" onClick={handlerSignIn}>
                       Sign In{" "}
                     </button>
                     <div className="form-control mx-12 text-[#B3B3B3]">

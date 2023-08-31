@@ -19,14 +19,14 @@ const HomePageEnglish = () => {
   return (
     <>
       <div>
-        <div className="bg-my-homepage w-[390px] h-[504px]  bg-cover bg-center lg:min-h-screen lg:w-full">
-          <div className="absolute z-10 inset-0 bg-[#00000066] font-bebas-neue w-[390px] h-[504px]  bg-cover bg-center lg:min-h-screen lg:w-full">
+        <div className="bg-my-homepage bg-cover bg-center min-h-screen w-full">
+          <div className="absolute z-10 inset-0 bg-[#00000066] font-bebas-neue bg-cover bg-center min-h-screen w-full">
             <div className="relative z-20 pt-2 lg:pt-0">
-              <div className="flex max-w-full max-h-full justify-between text-slate-500 font-medium items-center  mt-4 mx-4 lg:mx-40 lg:pb-10">
+              <div className="flex max-w-full max-h-full justify-between text-slate-500 font-medium items-center  mt-4 mx-4 lg:mx-40 sm:pb-8 lg:pb-10">
                 <Image src={netflixIcon} alt="" className="w-[89px] h-[24px] lg:w-[148px] lg:h-[40px]" />
 
                 <div className="flex space-x-3 items-center lg:space-x-6">
-                  <select className="select select-bordered select-sm  rounded text-xs w-[61px] h-[20px]  bg-[#00000066] text-slate-200 outline outline-offset-1 outline-slate-200 lg:text-sm lg:w-[180px] lg:h-[25px]" defaultValue="English">
+                  <select className="select select-bordered select-sm  rounded text-xs w-[61px] h-[20px]  bg-[#00000066] text-slate-200 outline outline-offset-1 outline-slate-200 sm:text-sm sm:w-[180px] lg:h-[25px]" defaultValue="English">
                     <option>Bahasa Indonesia</option>
                     <option>English</option>
                   </select>
@@ -45,15 +45,15 @@ const HomePageEnglish = () => {
                 <h2 className="text-lg font-medium pb-5 lg:text-3xl">Watch anywhere. Cancel anytime.</h2>
                 <h3 className="text-lg font-medium mx-14 pb-5 lg:text-2xl">Ready to watch? Enter your email to create or restart your membership.</h3>
 
-                <div className="flex flex-col justify-center items-center gap-4 lg:inline-block">
+                <div className="flex flex-col justify-center items-center gap-4 sm:inline-block sm:space-x-3">
                   <input
                     type="email"
                     placeholder="Email address"
-                    className="input input-bordered input-lg w-[274px] h-[48px] mr-0 text-white rounded bg-[#00000066] outline outline-offset-1 outline-slate-300 lg:mr-3 lg:w-[376px] lg:h-[56px]"
+                    className="input input-bordered input-lg w-[274px] h-[48px] mr-0 text-white rounded bg-[#00000066] outline outline-offset-1 outline-slate-300 sm:w-[270px] sm:h-[40px] lg:mr-3 lg:w-[376px] lg:h-[56px]"
                   />
                   <button
                     className="btn  border-none rounded bg-[#E50914] hover:bg-red-700 text-white
-                  w-[160px] h-[35px] text-sm lg:w-[211px] lg:h-[56px] lg:btn-lg"
+                  w-[160px] h-[35px] text-sm sm:w-[180px] sm:h-[45px]  lg:w-[211px] lg:h-[56px] lg:btn-lg"
                   >
                     Get Started
                     <Image src={arrowRightIcon} alt="" className="w-5 h-5 " />
@@ -178,15 +178,15 @@ const HomePageEnglish = () => {
 
             <p className="text-xl mx-4 py-5 lg:text-2xl">Ready to watch? Enter your email to create or restart your membership.</p>
 
-            <div className="flex flex-col justify-center items-center pb-16 gap-4 lg:inline-block">
+            <div className="flex flex-col justify-center items-center gap-4 pb-10 sm:inline-block sm:space-x-3">
               <input
                 type="email"
                 placeholder="Email address"
-                className="input input-bordered input-lg w-[274px] h-[48px] mr-0 text-white rounded bg-[#2D2D2D] opacity-60 outline outline-offset-1 outline-slate-300 lg:mr-3 lg:w-[376px] lg:h-[56px]"
+                className="input input-bordered input-lg w-[274px] h-[48px] mr-0 text-white rounded bg-[#00000066] outline outline-offset-1 outline-slate-300 sm:w-[270px] sm:h-[40px] lg:mr-3 lg:w-[376px] lg:h-[56px]"
               />
               <button
                 className="btn  border-none rounded bg-[#E50914] hover:bg-red-700 text-white
-                  w-[160px] h-[35px] text-sm lg:w-[211px] lg:h-[56px] lg:btn-lg"
+                  w-[160px] h-[35px] text-sm sm:w-[180px] sm:h-[45px]  lg:w-[211px] lg:h-[56px] lg:btn-lg"
               >
                 Get Started
                 <Image src={arrowRightIcon} alt="" className="w-5 h-5 " />
@@ -198,7 +198,7 @@ const HomePageEnglish = () => {
 
       <div className="bg-[#141414] pt-2 font-bebas-neue ">
         <div className="bg-black pt-10 text-white min-h-screen lg:pt-16 lg:min-h-[75vh]">
-          <div className="text-left -mx-2 lg:mx-28">
+          <div className="text-left -mx-2 sm:mx-6 lg:mx-28">
             <div className="flex flex-row text-center space-x-2 mx-10">
               <p>Questions?</p>
               <Link href={{}} className="underline underline-offset-1">
