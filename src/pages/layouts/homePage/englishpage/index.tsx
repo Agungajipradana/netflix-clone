@@ -80,10 +80,38 @@ const HomePageEnglish = () => {
       <div className="bg-[#141414] pt-2 font-bebas-neue">
         <div className="bg-black pt-14 text-white max-w-full pb-20">
           <div className="flex flex-col justify-center items-center text-center w-full lg:flex-row ">
-            <Image src={imageMobile} alt="" className="w-[342px] h-[256px] lg:w-[500px] lg:h-[374px] lg:mr-36" />
-            <div className=" lg:text-left mx-8 lg:ml-40 lg:mr-20">
+            <div className="mx-4 lg:text-left lg:mx-36 lg:w-[60%]">
               <h1 className="text-3xl font-extrabold pb-5 lg:text-5xl">Download your shows to watch offline</h1>
-              <p className="text-lg font-medium lg:text-2xl">Save your favorites easily and always have something to watch.</p>
+              <p className="text-lg mx-2 font-medium lg:text-2xl">Save your favorites easily and always have something to watch.</p>
+            </div>
+            <div className="order-none lg:order-first ">
+              <Image src={imageMobile} alt="" className="w-[342px] h-[256px] lg:w-[500px] lg:h-[374px] lg:ml-48" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-[#141414] pt-2 font-bebas-neue">
+        <div className="bg-black pt-14 text-white max-w-full pb-20">
+          <div className="flex flex-col justify-center items-center text-center w-full lg:flex-row ">
+            <div className=" lg:text-left mx-8 lg:ml-40 lg:mr-20">
+              <h1 className="text-3xl font-extrabold pb-5 lg:text-5xl">Watch everywhere</h1>
+              <p className="text-lg font-medium lg:text-2xl">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+            </div>
+            <Image src={imageDesktop} alt="" className="w-[342px] h-[256px] pt-5 lg:w-[500px] lg:h-[374px] lg:mr-36" />
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-[#141414] pt-2 font-bebas-neue">
+        <div className="bg-black pt-14 text-white max-w-full pb-20">
+          <div className="flex flex-col justify-center gap-x-20 items-center text-center w-full lg:flex-row ">
+            <div className="mx-4 lg:text-left lg:mx-36 lg:w-[60%]">
+              <h1 className="text-3xl font-extrabold pb-5 lg:text-5xl">Create profiles for kids</h1>
+              <p className="text-lg mx-4 font-medium lg:text-2xl">Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</p>
+            </div>
+            <div className="order-none lg:order-first ">
+              <Image src={imageKids} alt="" className="w-[342px] h-[256px] lg:w-[447px] lg:h-[335px] lg:ml-48" />
             </div>
           </div>
         </div>
@@ -91,65 +119,29 @@ const HomePageEnglish = () => {
 
       <div className="bg-[#141414] pt-2 font-bebas-neue">
         <div className="bg-black pt-16 text-white">
-          <div className="flex justify-center items-center text-center">
-            <Image src={imageMobile} alt="" className="" />
-            <div className="text-left mx-24">
-              <h1 className="text-5xl font-bold pb-5">Download your shows to watch offline</h1>
-              <p className="text-2xl font-medium">Save your favorites easily and always have something to watch.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+          <div className="flex-col mx-6 justify-center items-center text-center lg:mx-24">
+            <h1 className="text-3xl w-full font-bold pb-5 lg:text-5xl">Frequently Asked Questions</h1>
 
-      <div className="bg-[#141414] pt-2 font-bebas-neue">
-        <div className="bg-black pt-16 text-white">
-          <div className="flex justify-center items-center text-center">
-            <div className="text-left mx-24">
-              <h1 className="text-5xl font-bold pb-5">Watch everywhere</h1>
-              <p className="text-2xl font-medium">Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
-            </div>
-            <Image src={imageDesktop} alt="" className="" />
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-[#141414] pt-2 font-bebas-neue">
-        <div className="bg-black pt-16 text-white">
-          <div className="flex justify-center items-center text-center">
-            <Image src={imageKids} alt="" className="" />
-            <div className="text-left mx-24">
-              <h1 className="text-5xl font-bold pb-5">Create profiles for kids</h1>
-              <p className="text-2xl font-medium">Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-[#141414] pt-2 font-bebas-neue">
-        <div className="bg-black pt-16 text-white">
-          <div className="flex-col justify-center items-center text-center mx-24">
-            <h1 className="text-5xl font-bold pb-5">Frequently Asked Questions</h1>
-
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left rounded">
+            <div className="collapse collapse-plus bg-[#2D2D2D] mb-5 text-left rounded">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-xl font-medium">What is Netflix?</div>
+              <div className="collapse-title  font-medium text-lg lg:text-xl">What is Netflix?</div>
               <div className="collapse-content">
                 <p className="pb-2">Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.</p>
                 <p>You can watch as much as you want, whenever you want without a single commercial – all for one low monthly price. There1s always something new to discover and new TV shows and movies are added every week!</p>
               </div>
             </div>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left font-bebas-neue rounded">
+            <div className="collapse collapse-plus bg-[#2D2D2D] mb-5 text-left font-bebas-neue rounded">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-xl font-medium">How much does Netflix cost?</div>
+              <div className="collapse-title font-medium text-lg lg:text-xl">How much does Netflix cost?</div>
               <div className="collapse-content">
                 <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from IDR54,000 to IDR186,000 a month. No extra costs, no contracts.</p>
               </div>
             </div>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left rounded">
+            <div className="collapse collapse-plus bg-[#2D2D2D] mb-5 text-left rounded">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-xl font-medium">Where can I watch?</div>
+              <div className="collapse-title font-medium text-lg lg:text-xl">Where can I watch?</div>
               <div className="collapse-content">
                 <p className="pb-2">
                   Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs,
@@ -159,36 +151,43 @@ const HomePageEnglish = () => {
               </div>
             </div>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left rounded">
+            <div className="collapse collapse-plus bg-[#2D2D2D] mb-5 text-left rounded">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-xl font-medium">How do I cancel?</div>
+              <div className="collapse-title font-medium text-lg lg:text-xl">How do I cancel?</div>
               <div className="collapse-content">
                 <p>Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.</p>
               </div>
             </div>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left rounded">
+            <div className="collapse collapse-plus bg-[#2D2D2D] mb-5 text-left rounded">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-xl font-medium">What can I watch on Netflix?</div>
+              <div className="collapse-title font-medium text-lg lg:text-xl">What can I watch on Netflix?</div>
               <div className="collapse-content">
                 <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.</p>
               </div>
             </div>
 
-            <div className="collapse collapse-plus bg-[#141414] mb-5 text-left rounded">
+            <div className="collapse collapse-plus bg-[#2D2D2D] mb-5 text-left rounded">
               <input type="radio" name="my-accordion-3" />
-              <div className="collapse-title text-xl font-medium">Is Netflix good for kids?</div>
+              <div className="collapse-title font-medium text-lg lg:text-xl">Is Netflix good for kids?</div>
               <div className="collapse-content">
                 <p className="pb-2">The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.</p>
                 <p>Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content kids can watch and block specific titles you don’t want kids to see.</p>
               </div>
             </div>
 
-            <p className="text-2xl py-5">Ready to watch? Enter your email to create or restart your membership.</p>
+            <p className="text-xl mx-4 py-5 lg:text-2xl">Ready to watch? Enter your email to create or restart your membership.</p>
 
-            <div className="pb-16">
-              <input type="email" placeholder="Email address" className="input input-bordered input-lg w-[376px] h-[56px] mr-3 text-white rounded bg-[#00000066] outline outline-offset-1 outline-slate-300" />
-              <button className="btn btn-lg border-none rounded bg-[#E50914] hover:bg-red-700 text-white w-[211px] h-[56px]">
+            <div className="flex flex-col justify-center items-center pb-16 gap-4 lg:inline-block">
+              <input
+                type="email"
+                placeholder="Email address"
+                className="input input-bordered input-lg w-[274px] h-[48px] mr-0 text-white rounded bg-[#2D2D2D] opacity-60 outline outline-offset-1 outline-slate-300 lg:mr-3 lg:w-[376px] lg:h-[56px]"
+              />
+              <button
+                className="btn  border-none rounded bg-[#E50914] hover:bg-red-700 text-white
+                  w-[160px] h-[35px] text-sm lg:w-[211px] lg:h-[56px] lg:btn-lg"
+              >
                 Get Started
                 <Image src={arrowRightIcon} alt="" className="w-5 h-5 " />
               </button>
@@ -198,8 +197,8 @@ const HomePageEnglish = () => {
       </div>
 
       <div className="bg-[#141414] pt-2 font-bebas-neue ">
-        <div className="bg-black pt-16 text-white min-h-[75vh]">
-          <div className="text-left mx-28">
+        <div className="bg-black pt-10 text-white min-h-screen lg:pt-16 lg:min-h-[75vh]">
+          <div className="text-left -mx-2 lg:mx-28">
             <div className="flex flex-row text-center space-x-2 mx-10">
               <p>Questions?</p>
               <Link href={{}} className="underline underline-offset-1">
@@ -233,7 +232,7 @@ const HomePageEnglish = () => {
             </footer>
 
             <div className="mb-20 mx-10">
-              <select className="select select-bordered select-sm w-[180px] rounded h-[32px] bg-[#141414] text-slate-200 outline outline-offset-1 outline-slate-200 " defaultValue="English">
+              <select className="select select-bordered select-sm w-[180px] h-[32px] rounded  bg-[#141414] text-slate-200 outline outline-offset-1 outline-slate-200 " defaultValue="English">
                 <option>Bahasa Indonesia</option>
                 <option>English</option>
               </select>
