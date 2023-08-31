@@ -19,31 +19,42 @@ const HomePageEnglish = () => {
   return (
     <>
       <div>
-        <div className="bg-my-homepage min-h-screen bg-cover bg-center ">
-          <div className="absolute z-10 inset-0 bg-[#00000066]  font-bebas-neue">
-            <div className="relative z-20">
-              <div className="hidden lg:flex max-w-full max-h-full justify-between text-slate-500 font-medium items-center pb-10 mx-40 mt-4">
-                <Image src={netflixIcon} alt="" className="w-[148px] h-[40px]" />
+        <div className="bg-my-homepage w-[390px] h-[504px]  bg-cover bg-center lg:min-h-screen lg:w-full">
+          <div className="absolute z-10 inset-0 bg-[#00000066] font-bebas-neue w-[390px] h-[504px]  bg-cover bg-center lg:min-h-screen lg:w-full">
+            <div className="relative z-20 pt-2 lg:pt-0">
+              <div className="flex max-w-full max-h-full justify-between text-slate-500 font-medium items-center  mt-4 mx-4 lg:mx-40 lg:pb-10">
+                <Image src={netflixIcon} alt="" className="w-[89px] h-[24px] lg:w-[148px] lg:h-[40px]" />
 
-                <div className="flex space-x-6 items-center">
-                  <select className="select select-bordered select-sm w-[180px] rounded h-[32px]  bg-[#00000066] text-slate-200 outline outline-offset-1 outline-slate-200 " defaultValue="English">
+                <div className="flex space-x-3 items-center lg:space-x-6">
+                  <select className="select select-bordered select-sm  rounded text-xs w-[61px] h-[20px]  bg-[#00000066] text-slate-200 outline outline-offset-1 outline-slate-200 lg:text-sm lg:w-[180px] lg:h-[25px]" defaultValue="English">
                     <option>Bahasa Indonesia</option>
                     <option>English</option>
                   </select>
-                  <button className="btn btn-sm border-none rounded bg-[#E50914] hover:bg-red-700 text-white w-[90px] h-[25px]" onClick={handlerSignIn}>
+                  <button
+                    className="btn btn-sm border-none rounded bg-[#E50914] hover:bg-red-700 text-white 
+                    w-[76px] h-[32px] text-xs lg:w-[90px] lg:h-[25px] lg:text-sm"
+                    onClick={handlerSignIn}
+                  >
                     Sign In
                   </button>
                 </div>
               </div>
 
-              <div className="flex-col justify-center items-center text-center text-white mt-[150px]">
-                <h1 className="text-5xl font-bold pb-5">Unlimited movies, TV shows, and more</h1>
-                <h2 className="text-3xl font-medium pb-5">Watch anywhere. Cancel anytime.</h2>
-                <p className="text-2xl pb-5">Ready to watch? Enter your email to create or restart your membership.</p>
+              <div className="flex-col justify-center items-center text-center text-white mt-[70px] lg:mt-[150px]">
+                <h1 className="text-3xl font-bold pb-5 lg:text-5xl">Unlimited movies, TV shows, and more</h1>
+                <h2 className="text-lg font-medium pb-5 lg:text-3xl">Watch anywhere. Cancel anytime.</h2>
+                <h3 className="text-lg font-medium mx-14 pb-5 lg:text-2xl">Ready to watch? Enter your email to create or restart your membership.</h3>
 
-                <div className="">
-                  <input type="email" placeholder="Email address" className="input input-bordered input-lg w-[376px] h-[56px] mr-3 text-white rounded bg-[#00000066] outline outline-offset-1 outline-slate-300" />
-                  <button className="btn btn-lg border-none rounded bg-[#E50914] hover:bg-red-700 text-white w-[211px] h-[56px]">
+                <div className="flex flex-col justify-center items-center gap-4 lg:inline-block">
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="input input-bordered input-lg w-[274px] h-[48px] mr-0 text-white rounded bg-[#00000066] outline outline-offset-1 outline-slate-300 lg:mr-3 lg:w-[376px] lg:h-[56px]"
+                  />
+                  <button
+                    className="btn  border-none rounded bg-[#E50914] hover:bg-red-700 text-white
+                  w-[160px] h-[35px] text-sm lg:w-[211px] lg:h-[56px] lg:btn-lg"
+                  >
                     Get Started
                     <Image src={arrowRightIcon} alt="" className="w-5 h-5 " />
                   </button>
@@ -55,13 +66,25 @@ const HomePageEnglish = () => {
       </div>
 
       <div className="bg-[#141414] pt-2 font-bebas-neue">
-        <div className="bg-black pt-16 text-white">
-          <div className="flex justify-center items-center text-center">
-            <div className="text-left mx-24">
-              <h1 className="text-5xl font-bold pb-5">Enjoy on your TV</h1>
-              <p className="text-2xl font-medium">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
+        <div className="bg-black pt-14 text-white max-w-full pb-20">
+          <div className="flex flex-col justify-center items-center text-center w-full lg:flex-row ">
+            <div className=" lg:text-left mx-8 lg:ml-40 lg:mr-20">
+              <h1 className="text-3xl font-extrabold pb-5 lg:text-5xl">Enjoy on your TV</h1>
+              <p className="text-lg font-medium lg:text-2xl">Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p>
             </div>
-            <Image src={imageTV} alt="" className="" />
+            <Image src={imageTV} alt="" className="w-[342px] h-[256px] lg:w-[500px] lg:h-[374px] lg:mr-36" />
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-[#141414] pt-2 font-bebas-neue">
+        <div className="bg-black pt-14 text-white max-w-full pb-20">
+          <div className="flex flex-col justify-center items-center text-center w-full lg:flex-row ">
+            <Image src={imageMobile} alt="" className="w-[342px] h-[256px] lg:w-[500px] lg:h-[374px] lg:mr-36" />
+            <div className=" lg:text-left mx-8 lg:ml-40 lg:mr-20">
+              <h1 className="text-3xl font-extrabold pb-5 lg:text-5xl">Download your shows to watch offline</h1>
+              <p className="text-lg font-medium lg:text-2xl">Save your favorites easily and always have something to watch.</p>
+            </div>
           </div>
         </div>
       </div>
