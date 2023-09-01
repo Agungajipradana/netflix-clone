@@ -100,9 +100,9 @@ const LoginPage = () => {
                   </footer>
 
                   <div className="mb-8 pb-8 mx-10">
-                    <select className="select select-bordered w-[180px] rounded h-[32px] bg-black text-[#B3B3B3]">
+                    <select className="select select-bordered w-[180px] rounded h-[32px] bg-black text-[#B3B3B3]" defaultValue="English">
                       <option>Bahasa Indonesia</option>
-                      <option selected>English</option>
+                      <option>English</option>
                     </select>
                   </div>
                 </div>
