@@ -102,7 +102,7 @@ const PopularMovie = () => {
 
   return (
     <div className="bg-[#141414] text-white min-h-screen font-bebas-neue">
-      <h1 className="text-3xl font-semibold ml-4 mb-5 pt-5 ">Popular on Netflix</h1>
+      <h1 className="text-2xl font-semibold ml-4 mb-5 pt-20 md:text-3xl  md:pt-5">Popular on Netflix</h1>
       <div className="flex justify-center items-center text-center">
         <div className="w-full mt-2 ">
           <Slider {...settings} className="mx-20" appendDots={(dots) => <ul className="slick-dots my-4">{dots}</ul>}>

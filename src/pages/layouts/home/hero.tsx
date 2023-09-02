@@ -57,27 +57,46 @@ const HeroPage = () => {
   };
 
   return (
-    <div className="bg-cover bg-center bg-no-repeat min-h-screen" style={backgroundStyles}>
-      <div className="flex items-center justify-center">
-        <div className="max-w-lg mx-auto p-4 text-slate-200 absolute bottom-[100px] left-2 font-bebas-neue">
-          <h1 className="text-4xl font-semibold mb-4 ">{currentMovie?.title}</h1>
-          <p className="text-lg">{currentMovie?.overview.substring(0, 150)}...</p>
-          <div className="mt-5">
-            <button className="btn text-black font-bold text-lg">
-              <Image src={playIcon} alt="" className="w-5 h-5" />
-              <p>Play</p>
-            </button>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                handlerShowModalInfo();
-              }}
-              className="btn text-slate-200 bg-[#141414] opacity-75 hover:bg-[#141414] hover:opacity-40 hover:text-white ml-2  font-bold text-lg"
-            >
-              <Image src={informationIcon} alt="" className="w-5 h-5" />
-              <p>More Info</p>
-            </button>
+    <div className="bg-cover bg-center bg-no-repeat w-[390px] h-[300px] sm:min-h-screen sm:w-full md:min-h-screen md:w-full" style={backgroundStyles}>
+      <div className="flex items-center text-center justify-center md:text-start">
+        <div className="max-w-lg ml-7 p-4 text-slate-200 absolute bottom-[290px] left-2 font-bebas-neue sm:ml-48 sm:-bottom-[70px] md:bottom-[100px] md:ml-0">
+          <h1 className="md:font-semibold md:mb-4 md:text-4xl hidden sm:block">{currentMovie?.title}</h1>
+          <h2 className="flex justify-center items-center text-2xl font-semibold sm:hidden">{currentMovie?.title.length > 26 ? `${currentMovie?.title.substring(0, 26)}...` : currentMovie?.title}</h2>
+          <p className="text-lg hidden md:block">{currentMovie?.overview.substring(0, 150)}...</p>
+          <div className="mt-5 flex justify-center items-center text-center gap-x-8 md:space-x-2 md:inline-block">
+            <div className="flex justify-center items-center text-center gap-x-8 md:space-x-2 md:inline-block">
+              <button className="md:hidden">
+                <Image src={plusIcon} alt="" className="ml-3" />
+                <p>My List</p>
+              </button>
+              <button className="btn text-black font-bold text-lg">
+                <Image src={playIcon} alt="" className="w-5 h-5" />
+                <p>Play</p>
+              </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handlerShowModalInfo();
+                }}
+                className="hidden md:btn md:text-slate-200 md:bg-[#141414] md:opacity-75 md:hover:bg-[#141414] md:hover:opacity-40 md:hover:text-white md:ml-2  md:font-bold md:text-lg "
+              >
+                <Image src={informationIcon} alt="" className="w-5 h-5" />
+                <p>More Info</p>
+              </button>
+
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handlerShowModalInfo();
+                }}
+                className="text-slate-200 bg-[#141414] opacity-75 hover:bg-[#141414] hover:opacity-40 hover:text-white ml-2 font-bold text-lg md:hidden "
+              >
+                <Image src={informationIcon} alt="" className="w-5 h-5 ml-2" />
+                <p>Info</p>
+              </button>
+            </div>
             {showModalInfo && (
               <div className="absolute -mt-[400px] z-[9999]">
                 <div className="card w-[900px] h-[1220px] bg-[#141414]  shadow-xl mx-40">
