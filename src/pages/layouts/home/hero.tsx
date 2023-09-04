@@ -63,7 +63,7 @@ const HeroPage = () => {
           <h1 className="md:font-semibold md:mb-4 md:text-4xl hidden sm:block">{currentMovie?.title}</h1>
           <h2 className="flex justify-center items-center text-2xl font-semibold sm:hidden">{currentMovie?.title.length > 26 ? `${currentMovie?.title.substring(0, 26)}...` : currentMovie?.title}</h2>
           <p className="text-lg hidden md:block">{currentMovie?.overview.substring(0, 150)}...</p>
-          <div className="mt-5 flex justify-center items-center text-center gap-x-8 md:space-x-2 md:inline-block">
+          <div className="mt-5 flex justify-center items-center text-center gap-x-8 md:space-x-2 md:inline-block md:text-left">
             <div className="flex justify-center items-center text-center gap-x-8 md:space-x-2 md:inline-block">
               <button className="md:hidden">
                 <Image src={plusIcon} alt="" className="ml-3" />

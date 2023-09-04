@@ -1,11 +1,16 @@
 import HeroPage from "./hero";
-import PopularMovie from "./popular";
+import Moviepage from "./moviePage";
+import NowPlayingPage from "./moviePage/nowPlaying";
+import PopularMovie from "./moviePage/popular";
+import TopRatedPage from "./moviePage/topRated";
+import SeriesPage from "./seriesPage";
 
 const Home = () => {
   return (
     <>
       <HeroPage />
-      <PopularMovie />
+      <Moviepage />
+      <SeriesPage />
     </>
   );
 };

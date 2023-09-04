@@ -1,27 +1,38 @@
 import { useEffect, useState } from "react";
-import { getGenreMovieList, getMovieList } from "@/utils";
+import { getGenreMovieList, getMovieNowPlayingList } from "@/utils";
 import Image from "next/image";
 import { ArrowProps, GenreMovieProps, MovieProps } from "@/types";
 import Link from "next/link";
-import playIcon from "../../../assets/images/home/play.svg";
-import plusIcon from "../../../assets/images/home/plus.svg";
-import likeIcon from "../../../assets/images/home/like.svg";
-import arrowDownIcon from "../../../assets/images/home/arrow-down.svg";
-import arrowNext from "../../../assets/images/home/arrow-right.svg";
-import arrowPrev from "../../../assets/images/home/arrow-left.svg";
+import playIcon from "./../../../../assets/images/home/play.svg";
+import plusIcon from "./../../../../assets/images/home/plus.svg";
+import likeIcon from "./../../../../assets/images/home/like.svg";
+import arrowDownIcon from "./../../../../assets/images/home/arrow-down.svg";
+import arrowNext from "./../../../../assets/images/home/arrow-right.svg";
+import arrowPrev from "./../../../../assets/images/home/arrow-left.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const PopularMovie = () => {
+const NowPlayingPage = () => {
   const [popularMovies, setPopularMovies] = useState<MovieProps[]>([]);
   const [genreMovies, setGenreMovies] = useState<GenreMovieProps[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [selectedMovie, setSelectedMovie] = useState<MovieProps | null>(null);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const zIndex = isHovered ? 1001 : 1;
 
   useEffect(() => {
-    getMovieList().then((result) => {
+    getMovieNowPlayingList().then((result) => {
       setPopularMovies(result);
     });
   }, []);
@@ -107,10 +118,21 @@ const PopularMovie = () => {
 
   const MovieHoverCard = ({ movie, index }: { movie: MovieProps; index: number }) => {
     return (
-      <div className={`absolute z-[9999] font-bebas-neue group-hover:flex flex-col items-center justify-center text-white max-w-full max-h-full top-0 left-0 right-0 bottom-0 ${index !== hoverIndex ? "hidden" : ""}`}>
-        <div className="card card-compact absolute z-[9999]">
-          <figure className="relative group">
-            <Image className="w-full h-full " src={`${process.env.NEXT_PUBLIC_BASEIMAGEURL}/${movie.backdrop_path}`} alt="" width={300} height={300} quality={90} priority />
+      <div
+        className={`absolute font-bebas-neue group-hover:flex flex-col items-center justify-center text-white max-w-full max-h-full top-0 left-0 right-0 bottom-0 ${index !== hoverIndex ? "hidden" : ""} z-[9999]`}
+        onMouseEnter={() => {
+          handleMouseEnter();
+          setHoverIndex(index);
+        }}
+        onMouseLeave={() => {
+          handleMouseLeave();
+          setHoverIndex(null);
+        }}
+        style={{ zIndex: isHovered && hoverIndex === index ? 1001 : 1 }}
+      >
+        <div className="card">
+          <figure className=" group">
+            <Image className=" w-full h-full " src={`${process.env.NEXT_PUBLIC_BASEIMAGEURL}/${movie.backdrop_path}`} alt="" width={300} height={300} quality={90} priority />
             <h3 className="font-bold text-md absolute bottom-2 left-2">{movie.title}</h3>
           </figure>
 
@@ -153,11 +175,11 @@ const PopularMovie = () => {
   };
 
   return (
-    <div className="bg-[#141414] text-white min-h-screen font-bebas-neue ">
-      <h1 className="text-2xl font-semibold ml-4 mb-5 pt-20 md:text-3xl  md:pt-5">Popular on Netflix</h1>
+    <div className="bg-[#141414] text-white  font-bebas-neue">
+      <h1 className="text-2xl font-semibold ml-4 mb-5 pt-20 md:text-3xl md:pt-5 relative">Now Playing</h1>
       <div className="flex justify-center items-center text-center">
-        <div className="w-full mt-2 relative z-0">
-          <Slider {...settings} className="ml-[40px] relative mt-4">
+        <div className="w-full mt-2 ">
+          <Slider {...settings} className="ml-[40px] mt-4 relative z-0">
             {popularMovies.map((movie, i) => (
               <div className={`carousel-item group relative ${hoverIndex === i ? "hovered" : ""}`} key={i}>
                 <div className={`${hoverIndex === i ? "hovered" : ""}`} onMouseEnter={() => setHoverIndex(i)} onMouseLeave={() => setHoverIndex(null)}>
@@ -173,4 +195,4 @@ const PopularMovie = () => {
   );
 };
 
-export default PopularMovie;
+export default NowPlayingPage;
