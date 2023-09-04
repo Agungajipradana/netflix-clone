@@ -17,3 +17,7 @@ export interface GenreMovieProps {
   id: number;
   name: string;
 }
+
+export interface ArrowProps {
+  onClick: () => void;
+}

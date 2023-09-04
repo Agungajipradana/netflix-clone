@@ -58,7 +58,7 @@ const HeroPage = () => {
 
   return (
     <div className="bg-cover bg-center bg-no-repeat w-[390px] h-[300px] sm:min-h-screen sm:w-full md:min-h-screen md:w-full" style={backgroundStyles}>
-      <div className="flex items-center text-center justify-center md:text-start">
+      <div className="flex items-center text-center justify-center  md:text-start">
         <div className="max-w-lg ml-7 p-4 text-slate-200 absolute bottom-[290px] left-2 font-bebas-neue sm:ml-48 sm:-bottom-[70px] md:bottom-[100px] md:ml-0">
           <h1 className="md:font-semibold md:mb-4 md:text-4xl hidden sm:block">{currentMovie?.title}</h1>
           <h2 className="flex justify-center items-center text-2xl font-semibold sm:hidden">{currentMovie?.title.length > 26 ? `${currentMovie?.title.substring(0, 26)}...` : currentMovie?.title}</h2>
