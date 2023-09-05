@@ -63,6 +63,54 @@ export const getMovieNowPlayingList = async () => {
 
 // console.log(getMovieNowPlayingList());
 
+export const getMovieUpcomingList = async () => {
+  try {
+    const movieUpcoming = await axios.get(`${baseUrl}/movie/upcoming?page=1&api_key=${apiKey}`);
+    // console.log(movieUpcoming);
+    return movieUpcoming.data.results;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// console.log(getMovieUpcomingList());
+
+export const getMovieByGenreActionList = async () => {
+  try {
+    const movieByGenreAction = await axios.get(`${baseUrl}/discover/movie?page=1&api_key=${apiKey}&with_genres=28`);
+    // console.log(movieByGenreAction);
+    return movieByGenreAction.data.results;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// console.log(getMovieByGenreActionList());
+
+export const getMovieByGenreHorrorList = async () => {
+  try {
+    const movieByGenreHorror = await axios.get(`${baseUrl}/discover/movie?page=1&api_key=${apiKey}&with_genres=27`);
+    // console.log(movieByGenreHorror);
+    return movieByGenreHorror.data.results;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// console.log(getMovieByGenreHorrorList());
+
+export const getMovieByGenreComedyList = async () => {
+  try {
+    const movieByGenreComedy = await axios.get(`${baseUrl}/discover/movie?page=1&api_key=${apiKey}&with_genres=35`);
+    // console.log(movieByGenreComedy);
+    return movieByGenreComedy.data.results;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// console.log(getMovieByGenreComedyList());
+
 export const getSeriesPopularList = async () => {
   try {
     const seriesPopular = await axios.get(`${baseUrl}/tv/popular?page=1&api_key=${apiKey}`);
@@ -74,3 +122,15 @@ export const getSeriesPopularList = async () => {
 };
 
 // console.log(getSeriesPopularList());
+
+export const getSeriesTopRatedList = async () => {
+  try {
+    const seriesTopRated = await axios.get(`${baseUrl}/tv/top_rated?page=1&api_key=${apiKey}`);
+    // console.log(seriesTopRated);
+    return seriesTopRated.data.results;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// console.log(getSeriesTopRatedList());

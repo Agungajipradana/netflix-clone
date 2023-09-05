@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getGenreMovieList, getSeriesPopularList } from "@/utils";
+import { getGenreMovieList, getMovieByGenreComedyList } from "@/utils";
 import Image from "next/image";
 import { ArrowProps, GenreMovieProps, MovieProps } from "@/types";
 import Link from "next/link";
@@ -13,7 +13,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const PopularSeries = () => {
+const ComedyMoviePage = () => {
   const [popularMovies, setPopularMovies] = useState<MovieProps[]>([]);
   const [genreMovies, setGenreMovies] = useState<GenreMovieProps[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -32,7 +32,7 @@ const PopularSeries = () => {
   const zIndex = isHovered ? 1001 : 1;
 
   useEffect(() => {
-    getSeriesPopularList().then((result) => {
+    getMovieByGenreComedyList().then((result) => {
       setPopularMovies(result);
     });
   }, []);
@@ -176,7 +176,7 @@ const PopularSeries = () => {
 
   return (
     <div className="bg-[#141414] text-white  font-bebas-neue">
-      <h1 className="text-2xl font-semibold ml-4 mb-5 pt-20 md:text-3xl md:pt-5 relative">Popular TV Series</h1>
+      <h1 className="text-2xl font-semibold ml-4 mb-5 pt-20 md:text-3xl md:pt-5 relative">Comedy Movie</h1>
       <div className="flex justify-center items-center text-center">
         <div className="w-full mt-2 ">
           <Slider {...settings} className="ml-[40px] mt-4 relative z-0">
@@ -195,4 +195,4 @@ const PopularSeries = () => {
   );
 };
 
-export default PopularSeries;
+export default ComedyMoviePage;
