@@ -108,9 +108,9 @@ const Navbar = () => {
       </div>
 
       {/* Mobile */}
-      <div className="bg-black text-slate-200 w-full flex justify-center bottom-0 fixed py-3 md:hidden">
+      <div className="bg-black text-slate-200 w-full h-full flex justify-center absolute z-[9999] py-5 md:hidden">
         {/* <div className="flex max-w-full max-h-full justify-between text-slate-200 font-medium items-center mx-16 py-5"> */}
-        <div className="bg-black w-full flex justify-between items-center text-center space-x-6 mx-6 text-xs">
+        <div className="bg-black bottom-0 fixed w-full flex justify-between items-center text-center space-x-6 mx-6 text-xs md:hidden">
           {/* <div className="flex flex-col justify-center items-center text-center"> */}
           <Link href={"/layouts/home"}>
             <Image src={homeIcon} alt="" className="w-6 h-6 ml-1 sm:w-8 sm:h-8" />
